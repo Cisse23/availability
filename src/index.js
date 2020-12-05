@@ -1,11 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import App from './App';
+import Home from './Pages'
+import FolderTree from './FolderTree';
+import About from './Pages/About';
+import Users from './Pages/Users';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/foldertree" component={FolderTree} />
+        <Route path="/users" component={Users} />
+      </Switch>
+
+    </BrowserRouter>
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );
